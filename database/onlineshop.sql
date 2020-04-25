@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2019 at 07:53 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: Apr 24, 2020 at 10:50 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecommerece`
+-- Database: `onlineshop`
 --
 
 DELIMITER $$
@@ -108,7 +107,8 @@ INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `qty`) VALUES
 (55, 5, '::1', 14, 1),
 (56, 1, '::1', 9, 1),
 (57, 2, '::1', 9, 1),
-(71, 61, '127.0.0.1', -1, 1);
+(71, 61, '127.0.0.1', -1, 1),
+(147, 9, '::1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -151,8 +151,9 @@ CREATE TABLE `email_info` (
 
 INSERT INTO `email_info` (`email_id`, `email`) VALUES
 (3, 'admin@gmail.com'),
-(4, 'puneethreddy951@gmail.com'),
-(5, 'puneethreddy@gmail.com');
+(4, 'abhisheksingh21@gmail.com'),
+(5, 'abhishekbs@gmail.com'),
+(6, 'abhishek.kumar.singh2101@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -218,7 +219,7 @@ CREATE TABLE `orders_info` (
 --
 
 INSERT INTO `orders_info` (`order_id`, `user_id`, `f_name`, `email`, `address`, `city`, `state`, `zip`, `cardname`, `cardnumber`, `expdate`, `prod_count`, `total_amt`, `cvv`) VALUES
-(1, 12, 'Puneeth', 'puneethreddy951@gmail.com', 'Bangalore, Kumbalagodu, Karnataka', 'Bangalore', 'Karnataka', 560074, 'pokjhgfcxc', '4321 2345 6788 7654', '12/90', 3, 77000, 1234);
+(1, 12, 'Abhishek', 'abhishekSingh21@gmail.com', 'Madhubani, Rajnagar, Bihar', 'Madhubani', 'Bihar', 847235, 'Abhishek', '4321 2345 6788 7654', '12/22', 3, 77000, 1234);
 
 -- --------------------------------------------------------
 
@@ -359,15 +360,16 @@ CREATE TABLE `user_info` (
 --
 
 INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `address1`, `address2`) VALUES
-(12, 'puneeth', 'Reddy', 'puneethreddy951@gmail.com', 'puneeth', '9448121558', '123456789', 'sdcjns,djc'),
-(15, 'hemu', 'ajhgdg', 'puneethreddy951@gmail.com', '346778', '536487276', ',mdnbca', 'asdmhmhvbv'),
+(12, 'Abhishek', 'Singh', 'abhisheksingh21@gmail.com', 'abhishek', '9448121558', 'Madhubani, Rajnagar, Bihar', 'Bihar'),
+(15, 'puneeth', 'ajhgdg', 'puneethreddy951@gmail.com', '346778', '536487276', ',mdnbca', 'asdmhmhvbv'),
 (16, 'venky', 'vs', 'venkey@gmail.com', '1234534', '9877654334', 'snhdgvajfehyfygv', 'asdjbhfkeur'),
-(19, 'abhishek', 'bs', 'abhishekbs@gmail.com', 'asdcsdcc', '9871236534', 'bangalore', 'hassan'),
-(21, 'prajval', 'mcta', 'prajvalmcta@gmail.com', '1234545662', '202-555-01', 'bangalore', 'kumbalagodu'),
+(19, 'abhishek', 'bs', 'abhishekbs@gmail.com', 'asdcsdcc', '9871236534', 'Najafgarh, new delhi', 'Delhi'),
+(21, 'prajval', 'mcta', 'prajvalmcta@gmail.com', '1234545662', '202-555-01', 'najafgarh', 'Delhi'),
 (22, 'puneeth', 'v', 'hemu@gmail.com', '1234534', '9877654334', 'snhdgvajfehyfygv', 'asdjbhfkeur'),
-(23, 'hemanth', 'reddy', 'hemanth@gmail.com', 'Puneeth@123', '9876543234', 'Bangalore', 'Kumbalagodu'),
-(24, 'newuser', 'user', 'newuser@gmail.com', 'puneeth@123', '9535688928', 'Bangalore', 'Kumbalagodu'),
-(25, 'otheruser', 'user', 'otheruser@gmail.com', 'puneeth@123', '9535688928', 'Bangalore', 'Kumbalagodu');
+(23, 'hemanth', 'reddy', 'hemanth@gmail.com', 'hemanth@123', '9876543234', 'Delhi', 'India'),
+(24, 'newuser', 'user', 'newuser@gmail.com', 'newuser@123', '9535688928', 'Bangalore', 'Kumbalagodu'),
+(25, 'otheruser', 'user', 'otheruser@gmail.com', 'otheruser@123', '9535688928', 'Delhi', 'India'),
+(26, 'Abhishek ', 'Singh', 'abhishek.kumar.singh2101@gmail.com', 'abhishek@A1', '8851255456', 'house no. 7a, gali no. 5, surkhapur road, gopal nagar, najafgarh, new delhi', 'delhi');
 
 --
 -- Triggers `user_info`
@@ -401,17 +403,17 @@ CREATE TABLE `user_info_backup` (
 --
 
 INSERT INTO `user_info_backup` (`user_id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `address1`, `address2`) VALUES
-(12, 'Abhishek', 'Singh', 'abhishekSingh21@gmail.com', '123456789', '9448121558', '123456789', 'sdcjns,djc'),
-(14, 'hemanthu', 'reddy', 'hemanthreddy951@gmail.com', '123456788', '6526436723', 's,dc wfjvnvn', 'b efhfhvvbr'),
-(15, 'hemu', 'ajhgdg', 'keeru@gmail.com', '346778', '536487276', ',mdnbca', 'asdmhmhvbv'),
+(12, 'Abhishek', 'Singh', 'abhisheksingh21@gmail.com', 'abhishek', '9448121558', 'Madhubani, Rajnagar, Bihar', 'Bihar'),
+(15, 'puneeth', 'ajhgdg', 'puneethreddy951@gmail.com', '346778', '536487276', ',mdnbca', 'asdmhmhvbv'),
 (16, 'venky', 'vs', 'venkey@gmail.com', '1234534', '9877654334', 'snhdgvajfehyfygv', 'asdjbhfkeur'),
-(19, 'abhishek', 'bs', 'abhishekbs@gmail.com', 'asdcsdcc', '9871236534', 'bangalore', 'hassan'),
+(19, 'abhishek', 'bs', 'abhishekbs@gmail.com', 'asdcsdcc', '9871236534', 'Najafgarh, new delhi', 'Delhi'),
 (20, 'pramod', 'vh', 'pramod@gmail.com', '124335353', '9767645653', 'ksbdfcdf', 'sjrgrevgsib'),
-(21, 'prajval', 'mcta', 'prajvalmcta@gmail.com', '1234545662', '202-555-01', 'bangalore', 'kumbalagodu'),
+(21, 'prajval', 'mcta', 'prajvalmcta@gmail.com', '1234545662', '202-555-01', 'najafgarh', 'delhi'),
 (22, 'puneeth', 'v', 'hemu@gmail.com', '1234534', '9877654334', 'snhdgvajfehyfygv', 'asdjbhfkeur'),
-(23, 'hemanth', 'reddy', 'hemanth@gmail.com', 'hemanth@123', '9876543234', 'Bangalore', 'Kumbalagodu'),
+(23, 'hemanth', 'reddy', 'hemanth@gmail.com', 'hemanth@123', '9876543234', 'Delhi', 'India'),
 (24, 'newuser', 'user', 'newuser@gmail.com', 'newuser@123', '9535688928', 'Bangalore', 'Kumbalagodu'),
-(25, 'otheruser', 'user', 'otheruser@gmail.com', 'otheruser@123', '9535688928', 'Bangalore', 'Kumbalagodu');
+(25, 'otheruser', 'user', 'otheruser@gmail.com', 'otheruser@123', '9535688928', 'Delhi', 'India'),
+(26, 'Abhishek ', 'Singh', 'abhishek.kumar.singh2101@gmail.com', 'abhishek@A1', '8851255456', 'house no. 7a, gali no. 5, surkhapur road, gopal nagar, najafgarh, new delhi', 'delhi');
 
 --
 -- Indexes for dumped tables
@@ -512,7 +514,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -524,7 +526,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `email_info`
 --
 ALTER TABLE `email_info`
-  MODIFY `email_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `email_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `logs`
@@ -560,13 +562,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `user_info_backup`
 --
 ALTER TABLE `user_info_backup`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Constraints for dumped tables
