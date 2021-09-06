@@ -1,5 +1,9 @@
-# online-shopping-system
-It is a project on web development, It is basically a online shopping website. DBMS, PHP, html, css, javascripts are used.
+# Online Shopping System
+- It is a e-commerece website. Technologies used: SQL, PHP, HTML, CSS, Java-Scripts.
+- HTML, CSS, Java-Scripts is used for front-end.
+- PHP is used for back-end.
+- Database Management System is made which stores Users data. 
+- Run on XAMPP
 
 # Screenshots
 ![Image of adduser](https://github.com/AbhishekKumarSingh00/online-shopping-system/blob/gh-pages/Screenshots/Home.png)
